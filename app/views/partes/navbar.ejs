@@ -1,0 +1,14 @@
+<div id="navbar" class="navbar-collapse collapse">
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href="/">HOME</a></li>
+		<li><a href="/principaisnoticias">TODAS NOTÍCIAS</a></li>
+		<%if(flagAdmin == true){%>
+			<li><a href="/add_noticia">ADICIONAR NOTÍCIA</a></li>
+			<li><a href="/sair">SAIR</a></li>
+		<%}else{%>
+			<li><a href="/login">LOGIN</a></li>
+		<%}%>
+	</ul>
+</div>
+			
+

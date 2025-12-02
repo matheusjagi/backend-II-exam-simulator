@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="noticia_wrapper">
+            <span class="noticia_autor"><%=JNoticias[i].autor%></span>
+            <a href="noticia?id_noticia=<%=JNoticias[i].id%>" class="noticia_titulo"><%=JNoticias[i].titulo%></a>
+            <span class="noticia_data"><%=JNoticias[i].data_noticia%></span>
+            <br />
+            <p class="noticia_resumo">
+                <%=JNoticias[i].resumo%>
+            </p>
+            <%if(flagAdmin == true){%>
+                <div class="botoes-noticia">                                  
+                    <a href="apagar_noticia?id_noticia=<%=JNoticias[i].id %>" class="btn btn-danger">Apagar</a>                                 
+                    <a href="atualizar_noticia?id_noticia=<%=JNoticias[i].id %>" class="btn btn-primary">Atualizar</a>
+                </div>
+            <%}%>
+        </div>
+    </div>
+</div>	

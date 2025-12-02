@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+
+		<title>Portal de notícias</title>
+		
+		<!-- JQuery -->
+		<script src="js/jquery-2.2.1.js"></script>
+
+		<!-- incluindo css -->
+		<link href="css/style-bootstrap3.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="images/favicon.ico" />
+	</head>
+
+	<body>
+		<nav class="navbar navbar-default navbar-static-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>					
+					<img src="images/logo.png" />
+				</div>
+				<%-include('../partes/navbar')%>
+			</div>
+		</nav>
+	    <div class="container">
+
+			<%if(validacao.length>0){%>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="alert alert-danger">
+							<strong>Atenção!</strong>
+							<ul>
+								<%for(var i=0;i<validacao.length;i++){%>
+									<li><%=validacao[i].msg%></li>
+								<%}%>
+							</ul>
+						</div>
+					</div>
+				</div>
+			<%}%>
+	    	<div class="row">
+	    		<div class="col-md-12">
+					<form action="/autenticar" method="post">
+						<div class="form-group form-inline">
+							<label for="usuario" class="label-spacing">Usuário:</label>
+							<input type="text" class="form-control input-sm" id="usuario" name="usuario" placeholder="Usuário">
+						</div>
+						<div class="form-group form-inline">
+							<label for="senha" class="label-spacing">Senha:</label>
+							<input type="password" class="form-control input-sm" id="senha" name="senha" placeholder="Senha">
+						</div>
+						<div class="button-spacing">
+							<button type="submit" class="btn btn-danger">Entrar</button>
+						</div>
+					</form>					
+		    	</div>
+	    	</div>			
+	    </div>
+	
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	
+	</body>
+</html>
